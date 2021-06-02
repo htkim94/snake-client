@@ -1,25 +1,28 @@
 let conn;
 
 const handleUserInput = (key) => {
-  if (key === '\u0003') {
+  if (key === "\u0003") {
     process.exit();
   }
-  if (key === 'a') {
+  if (key === "a") {
     conn.write("Move: left");
   }
-  if (key === 'w') {
+  if (key === "w") {
     conn.write("Move: up");
   }
-  if (key === 'd') {
+  if (key === "d") {
     conn.write("Move: right");
   }
-  if (key === 's') {
+  if (key === "s") {
     conn.write("Move: down");
   }
-}
+  if (key === "m") {
+    conn.write("Say: I got you!");
+  }
+};
 // setup interface to handle user input from stdin
 const setupInput = function (con) {
-  conn = con
+  conn = con;
   const stdin = process.stdin;
   stdin.setRawMode(true);
   stdin.setEncoding("utf8");
