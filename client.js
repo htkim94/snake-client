@@ -12,6 +12,9 @@ const connect = () => {
   conn.on("connect", () => {
     console.log("Connected!");
     conn.write("Name: HTK");
+    // setInterval(() => {
+    //   conn.write("Move: up");
+    // }, 3000);
   });
 
   conn.on("data", (data) => {
@@ -21,4 +24,6 @@ const connect = () => {
   return conn;
 };
 
-module.exports = connect;
+module.exports = {
+  connect,
+};
