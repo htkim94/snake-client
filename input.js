@@ -1,24 +1,13 @@
+const {keys} = require('./constants');
+
 let conn;
 
+//How can I use map or message keys with defined object?
 const handleUserInput = (key) => {
   if (key === "\u0003") {
     process.exit();
   }
-  if (key === "a") {
-    conn.write("Move: left");
-  }
-  if (key === "w") {
-    conn.write("Move: up");
-  }
-  if (key === "d") {
-    conn.write("Move: right");
-  }
-  if (key === "s") {
-    conn.write("Move: down");
-  }
-  if (key === "m") {
-    conn.write("Say: I got you!");
-  }
+  conn.write(keys[key]);
 };
 // setup interface to handle user input from stdin
 const setupInput = function (con) {
